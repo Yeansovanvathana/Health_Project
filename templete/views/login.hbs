@@ -1,0 +1,51 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<link rel="stylesheet" href="/css/style_login.css">
+{{!-- <link rel="stylesheet" href="/css/style.css"> --}}
+
+<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+
+<body>
+   {{#if message}}
+      <div class="alert alert-danger text-center" role="alert"  >
+            <button type="button" class="close" data-dimiss="alert" aria-label="Close" ><span aria-hidden="true">&times;</span></button>
+            <strong> {{message}}</strong>
+      </div>
+   {{/if}}
+   
+  {{>header}}
+      
+    <div class="container">
+        <div class="row">
+			<div class="col-md-5 mx-auto">
+			<div id="first">
+				<div class="myform form">
+					 <div class="mb-3">
+						 <div class="col-md-12 text-center">
+							<h1>Login</h1>
+						 </div>
+					</div>
+                   <form action="/login"  method="post" >
+                              
+                           <div class="form-group">
+                              <label for="username" class="form-lable">Name  </label>
+                              <input  class="form-control" placeholder="Name" name="username" required>
+                           </div>
+                           <div class="form-group">
+                              <label for="password" class="form-lable">Password</label>
+                               <input  class="form-control" placeholder="Password" name="password" type="password" required>
+                           </div>
+                           <div class="col-md-12 text-center ">
+                              <button type="submit" class="btn btn-secondary btn-lg btn-block">Login</button>
+                           </div>
+                           
+                     </form>
+				</div>
+			</div>
+			  
+			</div>
+		</div>
+      </div>   
+       {{>footer}}
+</body>
