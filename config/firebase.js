@@ -1,10 +1,10 @@
 const admin = require("firebase-admin");
-require("dotenv").config();
+// require("dotenv").config();
 
-const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_KEY);
+const serviceAccount = require("./healthcare.json");
 
 admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
+  credential: admin.credential.cert(serviceAccount),
 });
 
 exports.db = admin.firestore();
